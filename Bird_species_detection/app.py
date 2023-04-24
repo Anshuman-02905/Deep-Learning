@@ -3,6 +3,9 @@ import numpy as np
 #import util
 import streamlit as st
 import os
+import sys
+sys.path.append('/app/deep-learning/Bird_species_detection')
+
 st.write(os.listdir())
 st.write(os.getcwd())
 st.image('/app/Deep-Learning/Bird_species_detection/BlueBird.jpg', channels="BGR")
