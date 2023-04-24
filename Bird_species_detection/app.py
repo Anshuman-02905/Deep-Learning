@@ -1,5 +1,5 @@
 import sys
-sys.path.append('Bird_species_detection/util.py')
+sys.path.append('/app/deep-learning/Bird_species_detection')
 from tensorflow import keras
 import numpy as np
 import util.py
