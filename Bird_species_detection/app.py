@@ -50,7 +50,7 @@ st.markdown("The input image should be have equal resolution  that means the len
 
 img = st.file_uploader("Choose a file")
 if st.button("submit Image"):
-    img=convert_image(img)
+    img=util.convert_image(img)
     st.image(img, channels="BGR")
     print("1-->>",img.shape)
     img=image_resize(img,height = 224)
