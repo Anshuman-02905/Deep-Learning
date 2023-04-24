@@ -1,6 +1,6 @@
 from tensorflow import keras
 import numpy as np
-import Bird_species_detection/util.py
+import util.py
 import streamlit as st
 import os
 import sys
