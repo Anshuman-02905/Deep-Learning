@@ -2,7 +2,7 @@ import sys
 import os
 import streamlit as st
 
-path = os.path.abspath("Bird_species_detection")
+path = os.path.abspath("Bird_species_detection/util.py")
 sys.path.append(path)
 st.write(sys.path)
 
