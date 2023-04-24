@@ -4,7 +4,7 @@ import util.py
 import streamlit as st
 import os
 import sys
-sys.path.append('/app/deep-learning/Bird_species_detection')
+sys.path.append('Bird_species_detection/util.py')
 
 st.write(os.listdir())
 st.write(os.getcwd())
