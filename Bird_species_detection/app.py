@@ -1,8 +1,9 @@
 from tensorflow import keras
 import numpy as np
-import util
+#import util
 import streamlit as st
-
+import os
+print(os.listdir())
 st.image('/app/Deep-Learning/Bird_species_detection/BlueBird.jpg', channels="BGR")
 
 st.title("Indian Bird Species Recognition")
