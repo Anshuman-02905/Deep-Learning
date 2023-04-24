@@ -1,5 +1,7 @@
 import sys
 import os
+import streamlit as st
+
 path = os.path.abspath("Bird_species_detection")
 sys.path.append(path)
 st.write(path)
@@ -8,7 +10,6 @@ st.write(path)
 from tensorflow import keras
 import numpy as np
 import util.py
-import streamlit as st
 import os
 
 
