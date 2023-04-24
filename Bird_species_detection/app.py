@@ -4,7 +4,7 @@ import streamlit as st
 
 path = os.path.abspath("Bird_species_detection")
 sys.path.append(path)
-st.write(path)
+st.write(sys.path)
 
 
 from tensorflow import keras
