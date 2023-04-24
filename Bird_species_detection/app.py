@@ -1,10 +1,11 @@
+import sys
+sys.path.append('Bird_species_detection/util.py')
 from tensorflow import keras
 import numpy as np
 import util.py
 import streamlit as st
 import os
-import sys
-sys.path.append('Bird_species_detection/util.py')
+
 
 st.write(os.listdir())
 st.write(os.getcwd())
