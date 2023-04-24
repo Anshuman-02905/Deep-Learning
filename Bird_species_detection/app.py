@@ -4,6 +4,7 @@ import numpy as np
 import streamlit as st
 import os
 st.write(os.listdir())
+st.write(os.getcwd())
 st.image('/app/Deep-Learning/Bird_species_detection/BlueBird.jpg', channels="BGR")
 
 st.title("Indian Bird Species Recognition")
