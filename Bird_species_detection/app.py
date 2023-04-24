@@ -3,7 +3,7 @@ import numpy as np
 import util
 import streamlit as st
 
-st.image('BlueBird.jpg', channels="BGR")
+st.image('/app/Deep-Learning/Bird_species_detection/BlueBird.jpg', channels="BGR")
 
 st.title("Indian Bird Species Recognition")
 st.header("About")
@@ -12,7 +12,7 @@ st.header("Development Summary")
 st.markdown("To develop a bird detection app, a large dataset of bird images is needed to train the neural network model. The model is typically based on a convolutional neural network (CNN) architecture, which has shown excellent performance in image recognition tasks. During training, the model learns to identify the distinguishing features of different bird species, such as their shape, size, color, and patterns. Once the model is trained, it can be integrated into the app, which typically includes a user interface that allows users to upload or capture images or videos. The app then applies the model to the input data to detect and classify birds, highlighting their locations and identifying their species.")
 
 image_size = 224
-model = keras.models.load_model('model.h5')
+model = keras.models.load_model('/app/Deep-Learning/Bird_species_detection/model.h5')
 st.header("Birds that are recognized in the current model")
 st.markdown('Asian Green Bee-Eater , Brown-Headed Barbet , Cattle Egret , Common Kingfisher ,  Common Myna , Common Rosefinch , Common Tailorbird , Coppersmith Barbet , Forest Wagtail , Gray Wagtail , Hoopoe , House Crow , Indian Grey Hornbill , Indian Peacock , Indian Pitta , Indian Roller , Jungle Babbler, Northern Lapwing , Red-Wattled Lapwing , Ruddy Shelduck , Rufous Treepie , Sarus Crane , White Wagtail , White-Breasted Kingfisher , White-Breasted Waterhen')
 
