@@ -9,7 +9,7 @@ st.write(sys.path)
 
 from tensorflow import keras
 import numpy as np
-import util.py
+import util
 import os
 
 
