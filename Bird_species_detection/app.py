@@ -29,8 +29,7 @@ img = st.file_uploader("Choose a file")
 if st.button("submit Image"):
     img=util.convert_image(img)
     st.image(img, channels="BGR")
-    print("1-->>",img.shape)
     img=util.image_resize(img,height = 224)
-    print("2-->>",img.shape)
     dct={0:'Asian Green Bee-Eater', 1:'Brown-Headed Barbet', 2:'Cattle Egret', 3:'Common Kingfisher', 4:'Common Myna', 5:'Common Rosefinch', 6:'Common Tailorbird', 7:'Coppersmith Barbet', 8:'Forest Wagtail', 9:'Gray Wagtail', 10:'Hoopoe', 11:'House Crow', 12:'Indian Grey Hornbill', 13:'Indian Peacock', 14:'Indian Pitta', 15:'Indian Roller', 16:'Jungle Babbler', 17:'Northern Lapwing', 18:'Red-Wattled Lapwing', 19:'Ruddy Shelduck', 20:'Rufous Treepie',21:'Sarus Crane',22:'White Wagtail',23:'White-Breasted Kingfisher',24:'White-Breasted Waterhen'}
-    st.write(dct[np.argmax(model.predict(img))])
+    st.header("PREDICTION")
+    st.markdown(dct[np.argmax(model.predict(img))])
