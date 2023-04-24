@@ -1,20 +1,37 @@
-import sys
-import os
+
 import streamlit as st
-
-path = os.path.abspath("Bird_species_detection/util.py")
-sys.path.append(path)
-st.write(sys.path)
-
-
 from tensorflow import keras
 import numpy as np
 import util
-import os
+import numpy as np
+import cv2
+
+def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
+    dim = None
+    (h, w) = image.shape[:2]
+    if width is None and height is None:
+        return image
+    if width is None:
+        r = height / float(h)
+        dim = (int(w * r), height)
+    else:
+        r = width / float(w)
+        dim = (width, int(h * r))
+    resized = cv2.resize(image, dim, interpolation = inter)
+
+    resized=np.array([resized])
+    return resized
+
+def convert_image(uploaded_file):
+    print('hello')
+    if uploaded_file is not None:
+        file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+        opencv_image = cv2.imdecode(file_bytes, 1)
+        return opencv_image
+    return None
 
 
-st.write(os.listdir())
-st.write(os.getcwd())
+
 st.image('Bird_species_detection/BlueBird.jpg', channels="BGR")
 
 st.title("Indian Bird Species Recognition")
@@ -34,10 +51,10 @@ st.markdown("The input image should be have equal resolution  that means the len
 
 img = st.file_uploader("Choose a file")
 if st.button("submit Image"):
-    img=util.convert_image(img)
+    img=convert_image(img)
     st.image(img, channels="BGR")
     print("1-->>",img.shape)
-    img=util.image_resize(img,height = 224)
+    img=image_resize(img,height = 224)
     print("2-->>",img.shape)
     dct={0:'Asian Green Bee-Eater', 1:'Brown-Headed Barbet', 2:'Cattle Egret', 3:'Common Kingfisher', 4:'Common Myna', 5:'Common Rosefinch', 6:'Common Tailorbird', 7:'Coppersmith Barbet', 8:'Forest Wagtail', 9:'Gray Wagtail', 10:'Hoopoe', 11:'House Crow', 12:'Indian Grey Hornbill', 13:'Indian Peacock', 14:'Indian Pitta', 15:'Indian Roller', 16:'Jungle Babbler', 17:'Northern Lapwing', 18:'Red-Wattled Lapwing', 19:'Ruddy Shelduck', 20:'Rufous Treepie',21:'Sarus Crane',22:'White Wagtail',23:'White-Breasted Kingfisher',24:'White-Breasted Waterhen'}
     st.write(dct[np.argmax(model.predict(img))])
