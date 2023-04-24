@@ -1,7 +1,8 @@
 import sys
 import os
 path = os.path.abspath("Bird_species_detection")
-sys.path.append('/app/deep-learning/Bird_species_detection')
+sys.path.append(path)
+st.write(path)
 
 
 from tensorflow import keras
