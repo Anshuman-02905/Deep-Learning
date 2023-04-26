@@ -18,7 +18,7 @@ def get_labels(lable_file):
     return dct
 
 def get_model(model_file):
-    model=keras.models.load_model('model_GTSRB')
+    model=keras.models.load_model(model_file)
     return model
 
 def model_predict(model,img):
