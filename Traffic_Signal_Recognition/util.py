@@ -13,7 +13,7 @@ def convert_image(uploaded_file):
 
 def get_labels(lable_file):
     dct = dict()
-    with open('Labels.json') as json_file:
+    with open(lable_file) as json_file:
         dct = json.load(json_file)
     return dct
 
