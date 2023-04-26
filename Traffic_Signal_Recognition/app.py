@@ -18,5 +18,6 @@ img = st.file_uploader("Choose a file")
 if st.button("submit Image"):
     img=util.convert_image(img)
     prediction = util.model_predict(model, img)
+    st.write("PREDICTIONS")
     st.write(dct[prediction])
 
