@@ -1,6 +1,7 @@
 import json
 from tensorflow import keras
 import cv2
+import numpy as np
 
 
 def convert_image(uploaded_file):
