@@ -2,10 +2,10 @@ import util
 import streamlit as st
 
 st.title("Traffic Light Recognition")
-st.image('Traffic Signal Recognition/Traffic_lights.jpg', channels="BGR")
+st.image('Traffic_Signal_Recognition/Traffic_lights.jpg', channels="BGR")
 
-dct=util.get_labels('Traffic Signal Recognition/Labels.json')
-model=util.get_model('Traffic Signal Recognition/model_GTSRB')
+dct=util.get_labels('Traffic_Signal_Recognition/Labels.json')
+model=util.get_model('Traffic_Signal_Recognition/model_GTSRB')
 
 st.write("I have developed a Traffic Sign Detection model using Keras and Convolutional Neural Network (CNN) techniques. The model has been trained on the GTSRB (German Traffic Sign Recognition Benchmark) dataset, which contains 50,000 images of traffic signs belonging to 40 different classes.")
 st.write("To build the model, I started by preprocessing the dataset to normalize the images and resize them to a uniform size. I then split the data into training, validation, and testing sets to evaluate the model's performance.")
